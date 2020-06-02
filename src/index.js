@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import todoController from "./controllers/todo";
 
 const app = express();
@@ -8,7 +9,7 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
 //static files
-app.use("/assets", express.static("./public"));
+app.use("/static", express.static(path.join(__dirname, "assets")));
 
 //fire controllers
 todoController(app);
