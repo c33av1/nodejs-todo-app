@@ -1,0 +1,48 @@
+<html>
+<%- include('partials/header') %>
+
+    <body>
+        <div class="flex-container">
+            <div class="row">
+                <div class="flex-item">
+                    <button onclick="document.getElementById('id01').style.display='block'">
+            Login
+          </button>
+                </div>
+                <div class="flex-item">
+                    <button onclick="document.getElementById('id02').style.display='block'">
+            Sign Up
+          </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="id01" class="modal">
+            <%- include('partials/login') %>
+        </div>
+        <div id="id02" class="modal">
+            <%- include('partials/register') %>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            // Get the modal
+            var modal1 = document.getElementById("id01");
+            var modal2 = document.getElementById("id02");
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                $(".formmsg").hide();
+                if (event.target == modal1) {
+                    modal1.style.display = "none";
+                }
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            };
+        </script>
+        <%- include('partials/loading') %>
+            <script src="/static/main.js"></script>
+    </body>
+
+</html>

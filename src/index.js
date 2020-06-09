@@ -1,7 +1,8 @@
 import express from "express";
 import path from "path";
-import todoController from "./controllers/todo";
 
+import mainController from "./controllers/main";
+import todoController from "./controllers/todo";
 const app = express();
 
 // set up template engine
@@ -12,7 +13,10 @@ app.set("view engine", "ejs");
 app.use("/static", express.static(path.join(__dirname, "assets")));
 
 //fire controllers
+mainController(app);
 todoController(app);
 
 // listen to port
-app.listen(3000, () => console.log("listening on port 3000"));
+app.listen(3000, () => {
+    console.log("listening on port 3000");
+});

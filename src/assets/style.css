@@ -11,6 +11,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    height: 100%;
 }
 
 #todo-table form:after {
@@ -33,7 +34,7 @@ input[type="text"] {
 button {
     padding: 20px;
     width: 30%;
-    float: left;
+    /* float: left; */
     background: #23282e;
     border: 0;
     box-sizing: border-box;
@@ -50,7 +51,7 @@ ul {
 
 li {
     width: 100%;
-    padding: 20px;
+    padding: 20px 0px 20px 20px;
     box-sizing: border-box;
     font-family: arial;
     font-size: 20px;
@@ -59,7 +60,7 @@ li {
 }
 
 li:hover {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -68,3 +69,113 @@ h1 {
     margin-bottom: 0;
     text-indent: -10000px;
 }
+
+#faded-page {
+    display: none;
+    height: 100%;
+    position: absolute;
+    background: grey;
+    width: 100%;
+    top: 0;
+    opacity: 0.5;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    margin-top: 10%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn:hover {
+    background-color: Black;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container:hover {
+    background-color: #141414;
+}
+
+.flex-container p {
+    flex-grow: 9;
+}
+
+.flex-container .btn {
+    width: 60px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+#todoList button.undo-btn,
+#completedList button.check-btn {
+    display: none;
+}
+
+#completedList li {
+    text-decoration: line-through;
+}
+
+hr {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+hr:after {
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+
+/* 
+header {
+    justify-content: flex-end;
+    background-color: #f1f1f1;
+    display: flex;
+}
+
+header a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+header a.active {
+    background-color: dodgerblue;
+    color: white;
+} */
