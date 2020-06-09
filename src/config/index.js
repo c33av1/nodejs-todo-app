@@ -1,9 +1,9 @@
 export default {
     db: {
-        host: "cluster0-nqx8f.mongodb.net",
-        name: "todo_app",
-        username: "todoapp_user",
-        password: "ZseV6wbht9v4E5MD",
+        host: process.env["DATABASE_HOST"],
+        name: process.env["DATABASE_NAME"],
+        username: process.env["DATABASE_USERNAME"],
+        password: process.env["DATABASE_PASSWORD"],
         get url() {
             return `mongodb+srv://${this.username}:${this.password}@${this.host}/test?retryWrites=true&w=majority`;
         },
