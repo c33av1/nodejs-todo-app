@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: docker-node-mongo
+    restart: always # will restart if it fails
+    build: . # will look for Dockerfile to build image
+    ports:
+      - "80:3000"
+    links: # to link app service to mongo service
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+  #   image: nginx
+  #   volumes:
+  #     - ./templates:/etc/nginx/templates
+  #   environment:
+  #     - NGINX_HOST=foobar.com
+  #     - NGINX_PORT=80
+  # database:
+  #   image: redis
