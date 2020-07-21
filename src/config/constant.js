@@ -1,6 +1,6 @@
 export default {
-    TODO_ITEM_STATUS: {
-        PENDING: "Pending",
-        COMPLETED: "Completed",
-    },
+  TODO_ITEM_STATUS: {
+    PENDING: "Pending",
+    COMPLETED: "Completed",
+  },
 };
